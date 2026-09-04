@@ -31,31 +31,6 @@ if (language === "hi-IN") {
         "क्या आपको कोई अन्य लक्षण महसूस हो रहे हैं?",
         "क्या आपने इसके लिए कोई दवा ली है?"
     ];
-} 
-else if (language === "te-IN") {
-    questions = [
-        "మీకు ఈ సమస్య ఎప్పటి నుండి ఉంది?",
-        "ఈ సమస్య ఎంత తీవ్రంగా ఉంది?",
-        "మీకు ఇంకా ఏవైనా ఇతర లక్షణాలు ఉన్నాయా?",
-        "దీని కోసం మీరు ఏదైనా మందులు తీసుకున్నారా?"
-    ];
-}
-else {
-    questions = [
-        "How long have you been experiencing this problem?",
-        "How severe is the problem?",
-        "Have you experienced any other symptoms?",
-        "Have you taken any medication for it?"
-    ];
-}
-
-  if (language === "hi-IN") {
-    questions = [
-        "आपको यह समस्या कब से है?",
-        "यह समस्या कितनी गंभीर है?",
-        "क्या आपको कोई अन्य लक्षण महसूस हो रहे हैं?",
-        "क्या आपने इसके लिए कोई दवा ली है?"
-    ];
 }
 else if (language === "te-IN") {
     questions = [
@@ -105,14 +80,11 @@ else {
         "Have you taken any medication for it?"
     ];
 }
-
     res.json({
         success: true,
         questions: questions
     });
 });
-
-const PORT = 3000;
 
 const PORT = process.env.PORT || 3000;
 
