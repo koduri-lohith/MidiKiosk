@@ -17,7 +17,10 @@
 
         <!-- Header -->
         <header>
-            <h1>🏥 MediKiosk</h1>
+            <h1>
+    <span class="logoIcon">🏥</span>
+    <span class="logoText">MediKiosk</span>
+</h1>
             <p>AI-Powered Patient Case Taking System</p>
         </header>
 
@@ -36,6 +39,42 @@
 
         <button id="startButton">
             Start Consultation
+        </button>
+
+    </div>
+
+
+    <!-- Consent & Privacy Screen -->
+    <div id="consentScreen" style="display: none;">
+
+        <h2>🔐 Privacy & Consent</h2>
+
+        <div class="progressText">
+            Step 1 of 6
+        </div>
+
+        <p>
+            Your information will be used to prepare your clinical
+            history for physician review.
+        </p>
+
+        <p>
+            Your health information should be handled securely and
+            used only for this consultation.
+        </p>
+
+        <label style="display: block; margin: 25px auto; font-size: 17px;">
+            <input
+                type="checkbox"
+                id="consentCheckbox"
+                style="width: auto; display: inline-block; margin-right: 8px;"
+            >
+            I understand and consent to the collection of my
+            information for this consultation.
+        </label>
+
+        <button id="consentContinueButton">
+            Continue
         </button>
 
     </div>
@@ -121,12 +160,15 @@
 
 <p id="aiQuestion"></p>
 
-    <input
-        type="text"
-        id="answerInput"
-        placeholder="Type your answer..."
-    >
-    <button id="answerVoiceButton">
+    <div id="quickAnswers"></div>
+
+<input
+    type="text"
+    id="answerInput"
+    placeholder="Type your answer..."
+>
+
+<button id="answerVoiceButton">
     🎤 Speak Answer
 </button>
 
@@ -144,6 +186,7 @@
 <div class="progressText">
     Step 4 of 5
 </div>
+
 
 <p>Please provide the following information.</p>
 
@@ -174,6 +217,40 @@
     </button>
 
 </div>
+<div id="clinicalHistoryScreen" style="display: none;">
+
+    <h2>📋 Clinical History</h2>
+
+    <p>Please provide additional medical history.</p>
+
+    <input type="text" id="pastMedicalHistory"
+        placeholder="Past Medical History">
+
+    <input type="text" id="pastSurgicalHistory"
+        placeholder="Past Surgical History">
+
+    <input type="text" id="currentMedications"
+        placeholder="Current Medications">
+
+    <input type="text" id="allergies"
+        placeholder="Drug / Food Allergies">
+
+    <input type="text" id="familyHistory"
+        placeholder="Family History">
+
+    <input type="text" id="personalHistory"
+        placeholder="Personal History">
+
+    <input type="text" id="previousInvestigations"
+        placeholder="Previous Investigations">
+
+    <br><br>
+
+    <button id="clinicalHistoryContinueButton">
+        Continue
+    </button>
+
+</div>
 <div id="summaryScreen" style="display: none;">
 
     <h2>AI-Generated Patient Summary</h2>
@@ -187,11 +264,41 @@
 
 </div>
 
-        <p><strong>Patient:</strong> <span id="summaryName"></span></p>
+       <p><strong>Patient:</strong>
+    <span id="summaryName"></span>
+</p>
 
-        <p><strong>Age:</strong> <span id="summaryAge"></span></p>
+<p><strong>Age:</strong>
+    <span id="summaryAge"></span>
+</p>
 
-        <p><strong>Gender:</strong> <span id="summaryGender"></span></p>
+<p><strong>Gender:</strong>
+    <span id="summaryGender"></span>
+</p>
+
+<div id="editPatientDetails" style="display: none;">
+
+    <p><strong>Edit Name:</strong>
+        <input type="text" id="editSummaryName">
+    </p>
+
+    <p><strong>Edit Age:</strong>
+        <input type="number" id="editSummaryAge">
+    </p>
+
+    <p><strong>Edit Gender:</strong>
+        <select id="editSummaryGender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+    </p>
+
+    <button id="savePatientEditButton">
+        💾 Save Changes
+    </button>
+
+</div>
 
         <p><strong>Chief Complaint:</strong>
             <span id="summaryComplaint"></span>
@@ -200,6 +307,36 @@
         <h3>Case History</h3>
 
         <ul id="summaryQuestions"></ul>
+        <h3>Clinical History</h3>
+<div id="summaryClinicalHistory"></div>
+
+<div id="editClinicalHistory" style="display: none;">
+
+    <input type="text" id="editPastMedicalHistory"
+        placeholder="Past Medical History">
+
+    <input type="text" id="editPastSurgicalHistory"
+        placeholder="Past Surgical History">
+
+    <input type="text" id="editCurrentMedications"
+        placeholder="Current Medications">
+
+    <input type="text" id="editAllergies"
+        placeholder="Drug / Food Allergies">
+
+    <input type="text" id="editFamilyHistory"
+        placeholder="Family History">
+
+    <input type="text" id="editPersonalHistory"
+        placeholder="Personal History">
+
+    <input type="text" id="editPreviousInvestigations"
+        placeholder="Previous Investigations">
+    <button id="saveClinicalHistoryButton">
+    💾 Save Clinical History
+</button>
+
+</div>
 
     </div>
 
@@ -218,6 +355,39 @@
 <div class="statusBadge">
     ✓ Case History Completed
 </div>
+<div class="aiSummaryCard">
+    <h3>🤖 AI Clinical Summary</h3>
+
+    <div class="summarySection">
+        <strong>Chief Complaint</strong>
+        <p id="aiSummaryComplaint">-</p>
+    </div>
+
+    <div class="summarySection">
+        <strong>Patient Information</strong>
+        <p id="aiSummaryPatient">-</p>
+    </div>
+
+    <div class="summarySection">
+        <strong>Clinical History</strong>
+        <p id="aiSummaryHistory">-</p>
+    </div>
+
+    <div class="summarySection">
+        <strong>AYUSH Assessment</strong>
+        <p id="aiSummaryAyush">-</p>
+    </div>
+
+    <div class="summarySection">
+        <strong>⚠️ Screening Alerts</strong>
+        <p id="aiSummaryAlerts">No alerts detected.</p>
+    </div>
+
+    <p class="aiDisclaimer">
+        AI-generated summary for physician review. Not a diagnosis.
+    </p>
+</div>
+<button id="editCaseButton">✏️ Edit Case</button>
 
     <div id="doctorPatientInfo">
         <h3>Patient Details</h3>
@@ -232,21 +402,65 @@
         <h3>Case History</h3>
         <ul id="doctorQuestions"></ul>
 
-        <h3>AYUSH History</h3>
-
+       <h3>AYUSH History</h3>
 <div id="doctorAyushData"></div>
+
+<div id="editAyushHistory" style="display: none;">
+    <input type="text" id="editPrakriti" placeholder="Prakriti">
+    <input type="text" id="editVikriti" placeholder="Vikriti">
+    <input type="text" id="editSara" placeholder="Sara">
+    <input type="text" id="editSamhanana" placeholder="Samhanana">
+    <input type="text" id="editPramana" placeholder="Pramana">
+    <input type="text" id="editSatmya" placeholder="Satmya">
+    <input type="text" id="editSattva" placeholder="Sattva">
+    <input type="text" id="editAharaShakti" placeholder="Ahara Shakti">
+    <input type="text" id="editVyayamaShakti" placeholder="Vyayama Shakti">
+    <input type="text" id="editVaya" placeholder="Vaya">
+
+    <button id="saveAyushEditButton">💾 Save AYUSH History</button>
+</div>
+<h3>Clinical History</h3>
+
+<div id="doctorClinicalHistory"></div>
 
         <h3>Medical Documents</h3>
 <p id="doctorDocumentsStatus"></p>
 
     </div>
 
+    <!-- ABDM / HIS Integration -->
+<div class="integrationCard">
+
+    <h3>🔗 ABDM / HIS Integration</h3>
+
+    <p>
+        Connect this patient case with the hospital information system
+        and ABDM ecosystem.
+    </p>
+
+    <div class="integrationStatus">
+        <span>🏥 HIS Connection</span>
+        <strong>Demo Ready</strong>
+    </div>
+
+    <div class="integrationStatus">
+        <span>🪪 ABHA</span>
+        <strong>Consent Required</strong>
+    </div>
+
+    <button id="abdmConnectButton">
+        🔗 Connect to ABDM / HIS
+    </button>
+
+    <p id="abdmStatus" class="integrationMessage"></p>
+
+</div>
 </div>
 <div id="documentScreen" style="display: none;">
 
     <h2>Medical Documents</h2>
 
-    <h2>Medical Documents</h2>
+    
 
 <div class="progressText">
     Step 5 of 5
@@ -282,8 +496,6 @@
 </div>
 
 </main>
-
-
         <!-- Footer -->
         <footer>
             <p>Patient information is handled securely.</p>
