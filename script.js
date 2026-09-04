@@ -107,7 +107,7 @@ caseContinueButton.addEventListener("click", function () {
         return;
     }
 
-    fetch("http://localhost:3000/analyze", {
+    fetch("https://midikiosk.onrender.com", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
