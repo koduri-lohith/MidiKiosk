@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediKiosk - Patient Case Taking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header>
+            <h1>🏥 MediKiosk</h1>
+            <p>AI-Powered Patient Case Taking System</p>
+        </header>
+
+
+        <!-- Main Content -->
+<main>
+
+    <div id="welcomeScreen">
+
+        <h2>Welcome</h2>
+
+        <p>
+            Please provide your medical information
+            before your consultation.
+        </p>
+
+        <button id="startButton">
+            Start Consultation
+        </button>
+
+    </div>
+
+
+    <div id="patientForm" style="display: none;">
+
+        <h2>Patient Details</h2>
+
+        <p>Please enter your basic information.</p>
+
+        <input type="text" id="patientName" placeholder="Full Name">
+
+        <input type="number" id="patientAge" placeholder="Age">
+
+        <select id="patientGender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <input type="tel" id="patientPhone" placeholder="Phone Number">
+
+        <br><br>
+
+        <button id="continueButton">
+            Continue
+        </button>
+
+    </div>
+    <div id="caseTakingScreen" style="display: none;">
+
+    <h2>Case Taking</h2>
+
+    <p>
+        Tell us what brings you here.
+        You can type your symptoms or use voice input.
+    </p>
+
+    <textarea
+        id="chiefComplaint"
+        placeholder="Describe your main problem..."
+        rows="5"
+    ></textarea>
+
+    <br><br>
+
+    <button id="voiceButton">
+        🎤 Speak
+    </button>
+
+    <button id="caseContinueButton">
+        Continue
+    </button>
+
+</div>
+<div id="aiProcessingScreen" style="display: none;">
+
+    <h2>🤖 AI Case Analysis</h2>
+
+    <p>Analyzing the patient's complaint...</p>
+
+    <p id="aiProcessingStatus">
+        Identifying relevant questions...
+    </p>
+
+</div>
+
+<div id="questionScreen" style="display: none;">
+
+    <h2>AI Case Taking</h2>
+
+    <p id="aiQuestion"></p>
+
+    <input
+        type="text"
+        id="answerInput"
+        placeholder="Type your answer..."
+    >
+    <button id="answerVoiceButton">
+    🎤 Speak Answer
+</button>
+
+    <br><br>
+
+    <button id="answerButton">
+        Submit Answer
+    </button>
+
+</div>
+<div id="ayushScreen" style="display: none;">
+
+    <h2>🌿 AYUSH History</h2>
+
+    <p>Please provide the following information.</p>
+
+    <input type="text" id="prakriti" placeholder="Prakriti">
+
+    <input type="text" id="vikriti" placeholder="Vikriti">
+
+    <input type="text" id="sara" placeholder="Sara">
+
+    <input type="text" id="samhanana" placeholder="Samhanana">
+
+    <input type="text" id="pramana" placeholder="Pramana">
+
+    <input type="text" id="satmya" placeholder="Satmya">
+
+    <input type="text" id="sattva" placeholder="Sattva">
+
+    <input type="text" id="aharaShakti" placeholder="Ahara Shakti">
+
+    <input type="text" id="vyayamaShakti" placeholder="Vyayama Shakti">
+
+    <input type="text" id="vaya" placeholder="Vaya">
+
+    <br><br>
+
+    <button id="ayushContinueButton">
+        Continue
+    </button>
+
+</div>
+<div id="summaryScreen" style="display: none;">
+
+    <h2>AI-Generated Patient Summary</h2>
+
+    <div id="summaryContent">
+        <div id="redFlagAlert" style="display: none;">
+
+    <h3>🚨 Red Flag Alert</h3>
+
+    <p id="redFlagMessage"></p>
+
+</div>
+
+        <p><strong>Patient:</strong> <span id="summaryName"></span></p>
+
+        <p><strong>Age:</strong> <span id="summaryAge"></span></p>
+
+        <p><strong>Gender:</strong> <span id="summaryGender"></span></p>
+
+        <p><strong>Chief Complaint:</strong>
+            <span id="summaryComplaint"></span>
+        </p>
+
+        <h3>Case History</h3>
+
+        <ul id="summaryQuestions"></ul>
+
+    </div>
+
+    <br>
+
+    <button id="finishButton">
+        Finish Consultation
+    </button>
+
+</div>
+<div id="doctorDashboard" style="display: none;">
+
+    <h2>👨‍⚕️ Doctor Dashboard</h2>
+<p>Patient Clinical Summary</p>
+
+<div class="statusBadge">
+    ✓ Case History Completed
+</div>
+
+    <div id="doctorPatientInfo">
+        <h3>Patient Details</h3>
+
+        <p><strong>Name:</strong> <span id="doctorName"></span></p>
+        <p><strong>Age:</strong> <span id="doctorAge"></span></p>
+        <p><strong>Gender:</strong> <span id="doctorGender"></span></p>
+
+        <h3>Chief Complaint</h3>
+        <p id="doctorComplaint"></p>
+
+        <h3>Case History</h3>
+        <ul id="doctorQuestions"></ul>
+
+        <h3>AYUSH History</h3>
+
+<div id="doctorAyushData"></div>
+
+        <h3>Medical Documents</h3>
+        <p>Uploaded documents available for review.</p>
+
+    </div>
+
+</div>
+<div id="documentScreen" style="display: none;">
+
+    <h2>Medical Documents</h2>
+
+    <p>
+        Upload previous prescriptions, lab reports,
+        discharge summaries, or other medical documents.
+    </p>
+
+    <input
+        type="file"
+        id="medicalDocuments"
+        multiple
+    >
+    <div id="fileList"></div>
+
+    <br><br>
+
+    <button id="documentContinueButton">
+        Continue
+    </button>
+
+</div>
+<div id="processingScreen" style="display: none;">
+
+    <h2>🤖 AI Document Processing</h2>
+
+    <p>
+        Analyzing your medical documents...
+    </p>
+
+    <p id="processingStatus">
+        Extracting medical information...
+    </p>
+
+</div>
+
+</main>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>Patient information is handled securely.</p>
+        </footer>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

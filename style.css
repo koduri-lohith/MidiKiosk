@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef7f8;
+    min-height: 100vh;
+    color: #1f2937;
+}
+
+.app {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 100vh;
+    margin: auto;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+header {
+    background: linear-gradient(135deg, #087f8c, #0b7285);
+    color: white;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Main */
+
+main {
+    flex: 1;
+    padding: 55px 25px;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 30px;
+    color: #164e63;
+    margin-bottom: 12px;
+}
+
+main h3 {
+    color: #164e63;
+    margin: 25px 0 12px;
+}
+
+main p {
+    color: #555;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+
+input,
+select,
+textarea {
+    width: 90%;
+    max-width: 650px;
+    padding: 14px 16px;
+    margin: 8px auto;
+    display: block;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.2s;
+    background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0b7285;
+    box-shadow: 0 0 0 3px rgba(11, 114, 133, 0.12);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Buttons */
+
+button {
+    background: #0b7285;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    font-size: 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    margin: 6px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #095c6b;
+    transform: translateY(-1px);
+}
+
+/* Start button */
+
+#startButton {
+    padding: 15px 35px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* AI Processing */
+
+#aiProcessingScreen,
+#processingScreen {
+    padding: 40px 20px;
+}
+
+#aiProcessingScreen h2,
+#processingScreen h2 {
+    margin-bottom: 20px;
+}
+
+/* Question area */
+
+#questionScreen {
+    max-width: 750px;
+    margin: auto;
+}
+
+#aiQuestion {
+    font-size: 21px;
+    font-weight: bold;
+    color: #164e63;
+    margin: 25px auto;
+}
+
+/* Summary */
+
+#summaryScreen,
+#doctorDashboard {
+    max-width: 850px;
+    margin: auto;
+}
+
+#summaryContent,
+#doctorPatientInfo {
+    text-align: left;
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+#summaryQuestions,
+#doctorQuestions {
+    margin-left: 25px;
+}
+
+#summaryQuestions li,
+#doctorQuestions li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+/* Red Flag */
+
+#redFlagAlert {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-left: 6px solid #dc2626;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+#redFlagAlert h3 {
+    color: #b91c1c;
+    margin: 0 0 8px;
+}
+
+/* AYUSH */
+
+#ayushScreen {
+    max-width: 750px;
+    margin: auto;
+}
+
+/* Documents */
+
+#documentScreen {
+    max-width: 750px;
+    margin: auto;
+}
+
+#fileList {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fileList p {
+    background: #f1f5f9;
+    padding: 10px 14px;
+    border-radius: 7px;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* Doctor Dashboard */
+
+#doctorDashboard {
+    width: 100%;
+}
+
+#doctorPatientInfo p {
+    margin-bottom: 10px;
+}
+
+#doctorPatientInfo h3 {
+    border-bottom: 1px solid #dbe4ea;
+    padding-bottom: 8px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 18px;
+    background: #f0f7f8;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 35px 15px;
+    }
+
+    main h2 {
+        font-size: 25px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+    }
+
+    button {
+        width: 90%;
+        max-width: 350px;
+    }
+
+}
+/* Doctor Dashboard Cards */
+
+#doctorPatientInfo {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+#doctorPatientInfo h3 {
+    margin-top: 22px;
+}
+
+#doctorPatientInfo h3:first-child {
+    margin-top: 0;
+}
+
+#doctorPatientInfo p {
+    background: white;
+    padding: 10px 12px;
+    border-radius: 7px;
+}
+
+#doctorQuestions li {
+    background: white;
+    padding: 12px;
+    border-radius: 7px;
+    margin-bottom: 8px;
+    border-left: 4px solid #0b7285;
+}
+
+#doctorAyushData {
+    background: white;
+    padding: 15px;
+    border-radius: 9px;
+}
+
+#doctorAyushData p {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-bottom: 1px solid #edf2f4;
+}
+.statusBadge {
+    display: inline-block;
+    margin: 10px 0 25px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #e6f7f3;
+    color: #087f5b;
+    font-size: 14px;
+    font-weight: bold;
+}
