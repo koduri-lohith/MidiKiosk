@@ -45,7 +45,11 @@
 
         <h2>Patient Details</h2>
 
-        <p>Please enter your basic information.</p>
+<div class="progressText">
+    Step 1 of 5
+</div>
+
+<p>Please enter your basic information.</p>
 
         <input type="text" id="patientName" placeholder="Full Name">
 
@@ -68,19 +72,21 @@
 
     </div>
     <div id="caseTakingScreen" style="display: none;">
+        <select id="languageSelect">
+    <option value="en-IN">🇬🇧 English</option>
+    <option value="hi-IN">🇮🇳 Hindi</option>
+    <option value="te-IN">🇮🇳 Telugu</option>
+</select>
 
     <h2>Case Taking</h2>
 
-    <p>
-        Tell us what brings you here.
-        You can type your symptoms or use voice input.
-    </p>
+<div class="progressText">
+    Step 2 of 5
+</div>
 
-    <textarea
-        id="chiefComplaint"
-        placeholder="Describe your main problem..."
-        rows="5"
-    ></textarea>
+<p id="caseInstruction">Tell us what brings you here. You can type your symptoms or use voice input.</p>
+
+    <textarea id="chiefComplaint" placeholder="Describe your main problem..." rows="5"></textarea>
 
     <br><br>
 
@@ -109,7 +115,11 @@
 
     <h2>AI Case Taking</h2>
 
-    <p id="aiQuestion"></p>
+<div class="progressText">
+    Step 3 of 5
+</div>
+
+<p id="aiQuestion"></p>
 
     <input
         type="text"
@@ -131,7 +141,11 @@
 
     <h2>🌿 AYUSH History</h2>
 
-    <p>Please provide the following information.</p>
+<div class="progressText">
+    Step 4 of 5
+</div>
+
+<p>Please provide the following information.</p>
 
     <input type="text" id="prakriti" placeholder="Prakriti">
 
@@ -223,7 +237,7 @@
 <div id="doctorAyushData"></div>
 
         <h3>Medical Documents</h3>
-        <p>Uploaded documents available for review.</p>
+<p id="doctorDocumentsStatus"></p>
 
     </div>
 
@@ -232,10 +246,13 @@
 
     <h2>Medical Documents</h2>
 
-    <p>
-        Upload previous prescriptions, lab reports,
-        discharge summaries, or other medical documents.
-    </p>
+    <h2>Medical Documents</h2>
+
+<div class="progressText">
+    Step 5 of 5
+</div>
+
+<p>Do you have previous prescriptions, lab reports, discharge summaries, or other medical documents?</p>
 
     <input
         type="file"
@@ -246,9 +263,8 @@
 
     <br><br>
 
-    <button id="documentContinueButton">
-        Continue
-    </button>
+    <button id="documentContinueButton">Continue</button>
+<button id="skipDocumentsButton">Skip for now</button>
 
 </div>
 <div id="processingScreen" style="display: none;">

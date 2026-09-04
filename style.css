@@ -45,8 +45,12 @@ header p {
 
 main {
     flex: 1;
-    padding: 55px 25px;
+    padding: 50px 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 main h2 {
@@ -73,12 +77,12 @@ select,
 textarea {
     width: 90%;
     max-width: 650px;
-    padding: 14px 16px;
+    padding: 17px 18px;
     margin: 8px auto;
     display: block;
     border: 1px solid #cbd5e1;
     border-radius: 9px;
-    font-size: 16px;
+    font-size: 18px;
     outline: none;
     transition: 0.2s;
     background: #fff;
@@ -101,11 +105,13 @@ button {
     background: #0b7285;
     color: white;
     border: none;
-    padding: 13px 25px;
-    font-size: 16px;
-    border-radius: 9px;
+    padding: 16px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
-    margin: 6px;
+    margin: 8px;
+    min-height: 52px;
     transition: 0.2s;
 }
 
@@ -327,4 +333,239 @@ footer {
     color: #087f5b;
     font-size: 14px;
     font-weight: bold;
+}
+.progressText {
+    display: inline-block;
+    padding: 6px 14px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    background: #e6f4f6;
+    color: #0b7285;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Kiosk Content Card */
+
+#welcomeScreen,
+#patientForm,
+#caseTakingScreen,
+#questionScreen,
+#ayushScreen,
+#documentScreen,
+#aiProcessingScreen,
+#processingScreen,
+#summaryScreen,
+#doctorDashboard {
+    width: 100%;
+    max-width: 850px;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+/* Kiosk Header */
+
+header {
+    padding: 32px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    font-size: 17px;
+}
+#startButton {
+    min-width: 240px;
+    padding: 18px 35px;
+    font-size: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+#startButton:hover {
+    transform: scale(1.02);
+}
+#voiceButton,
+#answerVoiceButton {
+    background: #0f766e;
+    min-width: 180px;
+}
+
+#voiceButton:hover,
+#answerVoiceButton:hover {
+    background: #115e59;
+}
+.progressText {
+    font-size: 15px;
+    padding: 8px 18px;
+    margin: 5px 0 20px;
+    border-radius: 20px;
+    background: #e6f4f6;
+    color: #0b7285;
+    font-weight: bold;
+    display: inline-block;
+}
+/* AI Processing */
+
+#aiProcessingScreen,
+#processingScreen {
+    text-align: center;
+}
+
+#aiProcessingScreen h2,
+#processingScreen h2 {
+    margin-bottom: 20px;
+}
+
+#aiProcessingStatus,
+#processingStatus {
+    font-weight: bold;
+    color: #0b7285;
+    font-size: 18px;
+    margin-top: 20px;
+}
+/* Medical Document Upload */
+
+#medicalDocuments {
+    padding: 15px;
+    background: #f8fafc;
+    border: 2px dashed #94a3b8;
+    cursor: pointer;
+}
+
+#medicalDocuments:hover {
+    border-color: #0b7285;
+}
+
+#fileList {
+    margin-top: 20px;
+}
+/* =========================
+   DOCTOR DASHBOARD
+========================= */
+
+#doctorDashboard {
+    max-width: 1000px;
+    text-align: left;
+}
+
+#doctorDashboard h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+#doctorDashboard > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+#doctorPatientInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+/* Section cards */
+
+#doctorPatientInfo h3 {
+    grid-column: span 2;
+    background: #f1f8f8;
+    padding: 14px 18px;
+    margin: 10px 0 -8px;
+    border-left: 5px solid #0b7285;
+    border-radius: 8px;
+    color: #075d6d;
+}
+
+/* Patient details */
+
+#doctorPatientInfo p {
+    margin: 0;
+    padding: 12px 16px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Chief complaint */
+
+#doctorComplaint {
+    grid-column: span 2;
+    background: #fff8e8 !important;
+    border-left: 4px solid #f0ad4e;
+    padding: 18px !important;
+    font-size: 17px !important;
+}
+
+/* Case history */
+
+#doctorQuestions {
+    grid-column: span 2;
+    background: #fafafa;
+    padding: 20px 35px;
+    border-radius: 10px;
+    margin: 0;
+}
+
+#doctorQuestions li {
+    padding: 10px 5px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 1.5;
+}
+
+/* AYUSH */
+
+#doctorAyushData {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background: #f3faf7;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+#doctorAyushData p {
+    background: white;
+    border: 1px solid #dceee8;
+}
+
+/* Documents */
+
+#doctorPatientInfo h3:last-of-type {
+    margin-top: 10px;
+}
+
+#doctorPatientInfo h3:last-of-type + p {
+    grid-column: span 2;
+    background: #f5f5f5;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    #doctorPatientInfo {
+        grid-template-columns: 1fr;
+    }
+
+    #doctorPatientInfo h3,
+    #doctorComplaint,
+    #doctorQuestions,
+    #doctorAyushData,
+    #doctorPatientInfo h3:last-of-type + p {
+        grid-column: span 1;
+    }
+
+    #doctorAyushData {
+        grid-template-columns: 1fr;
+    }
 }
